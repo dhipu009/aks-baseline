@@ -1718,8 +1718,6 @@ resource mc 'Microsoft.ContainerService/managedClusters@2022-09-02-preview' = {
         orchestratorVersion: kubernetesVersion
         enableNodePublicIP: false
         maxPods: 30
-        availabilityZones: [
-        ]
         upgradeSettings: {
           maxSurge: '33%'
         }
