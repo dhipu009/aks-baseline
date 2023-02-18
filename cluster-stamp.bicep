@@ -1664,14 +1664,14 @@ resource mc 'Microsoft.ContainerService/managedClusters@2022-09-02-preview' = {
     agentPoolProfiles: [
       {
         name: 'npsystem'
-        count: 3
-        vmSize: 'Standard_DS2_v2'
+        count: 1
+        vmSize: 'Standard_DS3_v2'
         osDiskSizeGB: 80
         osDiskType: 'Ephemeral'
         osType: 'Linux'
         osSKU: 'Ubuntu'
-        minCount: 3
-        maxCount: 4
+        minCount: 1
+        maxCount: 2
         vnetSubnetID: targetVirtualNetwork::snetClusterNodes.id
         enableAutoScaling: true
         enableCustomCATrust: false
@@ -1684,11 +1684,6 @@ resource mc 'Microsoft.ContainerService/managedClusters@2022-09-02-preview' = {
         orchestratorVersion: kubernetesVersion
         enableNodePublicIP: false
         maxPods: 30
-        availabilityZones: [
-          '1'
-          '2'
-          '3'
-        ]
         upgradeSettings: {
           maxSurge: '33%'
         }
@@ -1698,14 +1693,14 @@ resource mc 'Microsoft.ContainerService/managedClusters@2022-09-02-preview' = {
       }
       {
         name: 'npuser01'
-        count: 2
+        count: 1
         vmSize: 'Standard_DS3_v2'
         osDiskSizeGB: 120
         osDiskType: 'Ephemeral'
         osType: 'Linux'
         osSKU: 'Ubuntu'
-        minCount: 2
-        maxCount: 5
+        minCount: 1
+        maxCount: 2
         vnetSubnetID: targetVirtualNetwork::snetClusterNodes.id
         enableAutoScaling: true
         enableCustomCATrust: false
